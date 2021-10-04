@@ -1,0 +1,142 @@
+class MainClass(){
+    fun main(args: Array<String>){
+
+        val account2: SANAA= SANAA("156-5478-8965","Manuel",8969,"COLONIA",2500,2450,2536.23,"12/18/15","2021 JUNIO","12/12/12","11/11/11",1568,"1/1/1",0.0,0.0,0.0,0.0,200.0)
+        account2.displayBalance2()
+    }
+}
+MainClass().main(arrayOf(""))
+     class SANAA {
+            var codigoCliente: String = ""
+            var nombreCliente: String = ""
+            var numeroFactura: Int = 0
+            var direccion_: String = ""
+            val tipo_: String = "DOMESTICA"
+            val rutaLectura: String = "044-887-889"
+            var actualLectura: Int = 0
+            var anteriorLectura: Int = 0
+            var consumo_: Double = 0.0
+            var fechaFacturacion: String = ""
+            var periodo_: String = ""
+            val tarifa_: Double = 7.3
+            var actFecha: String = ""
+            var antFecha: String = ""
+            var numeroMedidor: Int = 0
+            var fechaVencimiento: String = ""
+            val alcantarilladoSanitario: Double = 57.12
+            val mantenimientoContador: Double = 1.50
+            var interesesMoratorios: Double = 0.0
+            val derechoConexion: Double = 70.0
+            var descuentoMayor: Double = 0.0
+            var actaCompromiso: Double = 0.0
+            var otros_: Double = 0.0
+            var saldoPendiente: Double = 0.0
+
+
+            constructor()
+            constructor(
+                codigo: String,
+                cliente: String,
+                numero_factura: Int,
+                direccion: String,
+                actual_lectura: Int,
+                anterior_lectura: Int,
+                consumo: Double,
+                fecha_facturacion: String,
+                perido: String,
+                fecha_actual: String,
+                fecha_anterior: String,
+                medidor: Int,
+                fecha_vencimiento: String,
+                intereses_moratorios: Double,
+                descuento_mayor: Double,
+                acta_compromiso: Double,
+                otros: Double,
+                saldo_pendiente: Double
+            ) {
+                codigoCliente = codigo
+                nombreCliente = cliente
+                numeroFactura = numero_factura
+                direccion_ = direccion
+                actualLectura = actual_lectura
+                anteriorLectura = anterior_lectura
+                consumo_ = consumo
+                fechaFacturacion = fecha_facturacion
+                periodo_ = perido
+                actFecha = fecha_actual
+                antFecha = fecha_anterior
+                numeroMedidor = medidor
+                fechaVencimiento = fecha_vencimiento
+                interesesMoratorios = intereses_moratorios
+                descuentoMayor = descuento_mayor
+                actaCompromiso = acta_compromiso
+                otros_ = otros
+                saldoPendiente = saldo_pendiente
+
+            }
+
+            var agua_potable: Double
+                get() {
+                    return tarifa_ * consumo_
+                }
+                set(value) {
+                    agua_potable = value
+                }
+            var consumo_mes: Double
+                get() {
+                    return agua_potable + alcantarilladoSanitario + mantenimientoContador + interesesMoratorios + derechoConexion + descuentoMayor + actaCompromiso + otros_
+                }
+                set(value) {
+                    consumo_mes = value
+                }
+            var total_pagar: Double
+                get() {
+                    return saldoPendiente + consumo_mes
+                }
+                set(value) {
+                    total_pagar = value
+                }
+
+            open fun displayBalance2() {
+                println("Estado de Cuenta SANAA")
+                println("")
+                println("$codigoCliente")
+                println("$direccion_")
+                println("")
+                println("Categoria: $tipo_")
+                println("Periodo (Año/Mes: $periodo_")
+                println("Ruta de Lectura: $rutaLectura")
+                println("Tarifa (HNL/M3): $tarifa_")
+                println("Lectura Actual: $actualLectura")
+                println("Fecha Lectura Actual: $actFecha")
+                println("Lectura Anterior: $anteriorLectura")
+                println("Fecha Lectura Anteriro: $antFecha")
+                println("Consumo: $consumo_")
+                println("Medidor: $numeroMedidor")
+                println("Fecha Facturacion: $fechaFacturacion")
+                println("Fecha Vencimiento: $fechaVencimiento")
+                println("")
+                println("FACTURA NO. $numeroFactura")
+                println("Concepto                     /     Valores")
+                println("Agua Potable:                      $agua_potable")
+                println("Alcantarilado Sanitario:           $alcantarilladoSanitario")
+                println("Mantenimiento Medidor:             $mantenimientoContador")
+                println("Intereses Moratorios:              $interesesMoratorios")
+                println("Derecho por Conexion:              $derechoConexion")
+                println("(-) Descuento Adulto Mayor:        $descuentoMayor")
+                println("Acta Compromiso:                   $actaCompromiso")
+                println("Otros:                             $otros_")
+                println("Consumo del Mes:                   $consumo_mes")
+                println("Saldo Pendiente:                   $saldoPendiente")
+                println("Total a Pagar:                     $total_pagar")
+
+
+
+
+            }
+        }
+
+
+
+
+

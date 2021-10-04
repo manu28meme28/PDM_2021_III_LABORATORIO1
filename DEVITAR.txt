@@ -1,0 +1,44 @@
+///DEVITAR///
+
+
+class MainClass(){
+    fun main(args: Array<String>){
+
+    }
+}
+MainClass().main(arrayOf(""))
+open class Devitar{
+
+    var monto: Double=0.0
+    var cuenta: Int=0
+
+
+    constructor()
+    constructor(mon: Double, cuen:Int){
+        monto=mon
+        cuenta=cuen
+
+    }
+    fun menu (){
+
+        print("Bienvenido")
+        print("Por favor ingrese la cuenta de la que va a devitar: ")
+        cuenta= readLine()!!.toInt()
+        print("Por favor ingrese el monto a devitar: ")
+        monto=readLine()!!.toDouble()
+        print("Recuerde que no se aceptan devitos mayores a 5,000.00 ni menores a 0.0")
+        if (monto>5000.00 && monto<0.00){
+            print("El monto ingresado supera los 5,000.00 lps")
+
+
+        }else{
+            print(" Se devitaran: "+ monto+"De la cuenta: " + cuenta)
+
+        }
+
+
+    }
+
+
+
+    }

@@ -1,0 +1,40 @@
+///ACREDITAR///
+
+class MainClass(){
+    fun main(args: Array<String>){
+        Acreditar.menu
+
+    }
+}
+MainClass().main(arrayOf(""))
+open class Acreditar{
+
+    var monto: Double=0.0
+    var cuenta: Int=0
+
+
+    constructor()
+    constructor(mon: Double, cuen:Int){
+        monto=mon
+        cuenta=cuen
+
+    }
+    class menu (){
+
+        print("Bienvenido")
+        print("Por favor ingrese la cuenta a la que va a acreditar: ")
+        cuenta= readLine()!!.toInt()
+        print("Por favor ingrese el monto a acreditar: ")
+        monto=readLine()!!.toDouble()
+        print("Recuerde que no se aceptan creditos mayores a 10,000.00 ni menores a 0.0")
+        if (monto>5000.00 && monto<0.00){
+            print("El monto ingresado supera los 10,000.00 lps o es menor a los 0.00")
+
+
+        }else{
+            print(" Se acreditaron los: "+ monto+"lps."+" //  A la cuenta: " + cuenta)
+
+        }
+
+
+    }

@@ -1,0 +1,124 @@
+lass MainClass(){
+    fun main(args: Array<String>){
+        val account1: ENEE = ENEE(25562,2550.0,"12/12/12","1/1/1","12/12/12","1/1/1",30,15679646,256,2897,"RESIDENCIAL","COLONIA",2688.0,256.32,2500.32,0,0,0.0,0.0)
+
+        account1.displayBalance()
+
+}
+}
+MainClass().main(arrayOf(""))
+open class ENEE {
+
+    var codigoCliente: Int = 0
+    var fechaLectura: String = ""
+    var cuentaBalance: Double = 0.0
+    var fechaVencimiento: String = ""
+    var periodo1: String = ""
+    var periodo2: String = ""
+    var diasFacturacion: Int = 0
+    var numeroFactura: Int = 0
+    var consumo: Int = 0
+    var numeroMedidor: Int = 0
+    var tipoConsumo: String = ""
+    var ubicacion: String = ""
+    val oficinaComercial: String = "FM"
+    val tarifa: Int = 101
+    var mesTotal: Double = 0.0
+    var salPendiente: Double = 0.0
+    var ultPago: Double = 0.0
+    var mesesMora: Int = 0
+    var contVigente: Int = 0
+    var contValor: Double = 0.0
+    var apCuota: Double = 0.0
+
+
+    constructor()
+    constructor(
+        codigo: Int,
+        saldo_actual: Double,
+        fecha_lectura: String,
+        vencimiento: String,
+        periodo_1: String,
+        periodo_2: String,
+        dias_facturacion: Int,
+        numero_factura: Int,
+        consumo_watts: Int,
+        medidor: Int,
+        tipo_consumo: String,
+        ubicacion_: String,
+        saldo_mes: Double,
+        saldo_pendiente: Double,
+        ultimo_pago: Double,
+        meses_mora: Int,
+        vigente: Int,
+        valor: Double,
+        cuota: Double
+    ) {
+        codigoCliente = codigo
+        cuentaBalance = saldo_actual
+        fechaLectura = fecha_lectura
+        fechaVencimiento = vencimiento
+        periodo1 = periodo_1
+        periodo2 = periodo_2
+        diasFacturacion = dias_facturacion
+        numeroFactura = numero_factura
+        consumo = consumo_watts
+        numeroMedidor = medidor
+        tipoConsumo = tipo_consumo
+        ubicacion = ubicacion_
+        mesTotal = saldo_mes
+        salPendiente = saldo_pendiente
+        ultPago = ultimo_pago
+        mesesMora = meses_mora
+        contVigente = vigente
+        contValor = valor
+        apCuota = cuota
+
+    }
+
+    var totalPagar: Double
+        get() {
+            return cuentaBalance + salPendiente + apCuota
+        }
+        set(value) {
+            cuentaBalance = value
+        }
+
+    open fun displayBalance() {
+        println("Estado de Cuenta ENEE")
+        println("")
+        println("CODIGO CLIENTE:           $codigoCliente")
+        println("Fecha de Lectura:         $fechaLectura")
+        println("Fecha de Vencimiento:     $fechaVencimiento")
+        println("Perido:                   $periodo1 al $periodo2")
+        println("Dias de Facturacion       $diasFacturacion")
+        println("Numero de Factura:        $numeroFactura")
+        println("")
+        println("                  DATOS PERSONALES")
+        println(" ")
+        println("     $consumo " + "              $fechaVencimiento " + "             $totalPagar")
+        println("CONSUMO (kWh)" + "   FECHA DE VENCIMIENTO" + "   TOTAL A PAGAR")
+        println("")
+        println("                  DATOS TECNICOS")
+        println("")
+        println("Numero de Medidor:       $numeroMedidor")
+        println("Tipo de Consumo:         $tipoConsumo")
+        println("Ubicacion:               $ubicacion")
+        println("Oficina Comercial:       $oficinaComercial")
+        println("Tarifa:                  $tarifa")
+        println("")
+        println("")
+        println("CODIGO CLIENTE           $codigoCliente")
+        println("Ultimo Pago: HNL         $ultPago")
+        println("Fecha Ultimo Pago:       $fechaLectura")
+        println("Meses de Mora:           $mesesMora")
+        println("Contrato Vigente:        $contVigente")
+        println("Valor Financiado: HNL    $contValor")
+        println("Cuota Aplicada: HNL      $apCuota")
+        println(" ")
+        println("Total Mes: HNL           $cuentaBalance")
+        println("Saldo Pendiente: HNL     $salPendiente")
+        println("Total a Pagar: HNL       $totalPagar")
+        println("")
+    }
+}

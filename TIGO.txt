@@ -1,0 +1,172 @@
+//TIGO////
+
+
+class MainClass(){
+    fun main(args: Array<String>) {
+
+
+        MainClass().main(arrayOf(""))
+
+        class Tigo {
+            var SuperRecarga1: Int = 100
+            var SuperRecarga2: Int = 200
+            var SuperRecarga3: Int = 300
+            var SuperRecarga4: Int = 500
+            var RecargaSaldo1: Int = 20
+            var RecargaSaldo2: Int = 50
+            var RecargaSaldo3: Int = 100
+            var RecargaSaldo4: Int = 200
+            var NumeroDestino: String = ""
+            var TotalPagar: Double = 0.0
+
+
+            constructor()
+            constructor(
+                TPagar: Double,
+                NDestino: String,
+                SRecarga1: Int,
+                SRecarga2: Int,
+                SRecarga3: Int,
+                SRecarga4: Int,
+                RSaldo1: Int,
+                RSaldo2: Int,
+                RSaldo3: Int,
+                RSaldo4: Int
+            ) {
+                SuperRecarga1 = SRecarga1
+                SuperRecarga2 = SRecarga2
+                SuperRecarga3 = SRecarga3
+                SuperRecarga4 = SRecarga4
+                RecargaSaldo1 = RSaldo1
+                RecargaSaldo2 = RSaldo2
+                RecargaSaldo3 = RSaldo3
+                RecargaSaldo4 = RSaldo4
+                NumeroDestino = NDestino
+                TotalPagar = TPagar
+
+
+            }
+
+            fun menu() {
+
+                var Numero: Int=0
+                var TipoRecarga: Int = 0
+                var Recarga: Int = 0
+                print("Hola!")
+                print("Ingrese el tipo de recarga que desea usar: 1- Super recarga o 2- Recarga Normal")
+                TipoRecarga = readLine()!!.toInt()
+                if (TipoRecarga == 1) {
+                    print("Usted selecciono Super recarga ")
+                    print("Ingrese la recarga a enviar: 1- 100, 2- 200, 3- 300, 4- 400 Lps.")
+                    Recarga = readLine()!!.toInt()
+                    if (Recarga == 1) {
+                        print("Usted selecciono Super recarga de 100 lempiras")
+                        print("Ingrese el numero a enviar la recarga")
+                        Numero = readLine()!!.toInt()
+                        print("El numero ingresado es: "+ Numero)
+                        print("total de la recarga 100 lempiras")
+                        print("Ingrese el numero del celular destino: ")
+                        NumeroDestino= readLine()!!.toInt
+                        print("Recarga enviada!!!!")
+                        print("Tigo esta contigo!!!")
+
+                    } else {
+                        if (Recarga == 2) {
+                            print("Usted selecciono Super recarga de 200 lempiras")
+                            print("Ingrese el numero a enviar la recarga")
+                            Numero = readLine()!!.toInt()
+                            print("El numero ingresado es: "+ Numero)
+                            print("total de la recarga 200 lempiras")
+                            print("Ingrese el numero del celular destino: ")
+                            NumeroDestino= readLine()!!.toInt
+                            print("Recarga enviada!!!!")
+                            print("Tigo esta contigo!!!")
+
+                        }else{
+                            if (Recarga == 3){
+                                print("Usted selecciono Super recarga de 300 lempiras")
+                                print("Ingrese el numero a enviar la recarga")
+                                Numero = readLine()!!.toInt()
+                                print("El numero ingresado es: "+ Numero)
+                                print("total de la recarga 300 lempiras")
+                                print("Ingrese el numero del celular destino: ")
+                                NumeroDestino= readLine()!!.toInt
+                                print("Recarga enviada!!!!")
+                                print("Tigo esta contigo!!!")
+                            }else{
+                                if (Recarga == 4){
+                                    print("Usted selecciono Super recarga de 400 lempiras")
+                                    print("Ingrese el numero a enviar la recarga")
+                                    Numero = readLine()!!.toInt()
+                                    print("El numero ingresado es: "+ Numero)
+                                    print("Total de la recarga 400 lempiras")
+                                    print("Ingrese el numero del celular destino: ")
+                                    NumeroDestino= readLine()!!.toInt
+                                    print("Recarga enviada!!!!")
+                                    print("Tigo esta contigo!!!")
+                                }
+                            }
+                    }
+
+                    }
+
+                }else{
+                    print("Usted selecciono la recarga normal")
+                    print("Seleccione su recarga: 1- 20 lps, 2- 50 lps, 3- 100 lps, 4- 200 lps")
+                    Recarga= readLine()!!.toInt()
+                    if (Recarga==1){
+                        print("Usted selecciono recarga de 20 lempiras")
+                        print("Ingrese el numero a enviar la recarga")
+                        Numero = readLine()!!.toInt()
+                        print("El numero ingresado es: "+ Numero)
+                        print("total de la recarga 20 lempiras")
+                        print("Ingrese el numero del celular destino: ")
+                        NumeroDestino= readLine()!!.toInt
+                        print("Recarga enviada!!!!")
+                        print("Tigo esta contigo!!!")
+
+                    }else{
+                        if (Recarga==2){
+                            print("Usted selecciono recarga de 50 lempiras")
+                            print("Ingrese el numero a enviar la recarga")
+                            Numero = readLine()!!.toInt()
+                            print("El numero ingresado es: "+ Numero)
+                            print("total de la recarga 50 lempiras")
+                            print("Ingrese el numero del celular destino: ")
+                            NumeroDestino= readLine()!!.toInt
+                            print("Recarga enviada!!!!")
+
+                            print("Tigo esta contigo!!!")
+                        }else{
+                            if (Recarga==3){
+                                print("Usted selecciono recarga de 100 lempiras")
+                                print("Ingrese el numero a enviar la recarga")
+                                Numero = readLine()!!.toInt()
+                                print("El numero ingresado es: "+ Numero)
+                                print("total de la recarga 100 lempiras")
+                                print("Ingrese el numero del celular destino: ")
+                                NumeroDestino= readLine()!!.toInt
+                                print("Recarga enviada!!!!")
+                                print("Tigo esta contigo!!!")
+                            }else{
+                                if (Recarga==4){
+                                    print("Usted selecciono recarga de 200 lempiras")
+                                    print("Ingrese el numero a enviar la recarga")
+                                    Numero = readLine()!!.toInt()
+                                    print("El numero ingresado es: "+ Numero)
+                                    print("total de la recarga 200 lempiras")
+                                    print("Ingrese el numero del celular destino: ")
+                                    NumeroDestino= readLine()!!.toInt
+                                    print("Recarga enviada!!!!")
+                                    print("Tigo esta contigo!!!")
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }}
+
